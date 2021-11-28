@@ -2,13 +2,13 @@
 #include <chrono>
 
 /*
-	Quick chrono utility functions for timing. These should run very close to the metal.
+Quick chrono utility functions for timing. These should run very close to the metal.
 
-	Note: On MSVC, high_resolution_clock is based on QueryPerformanceCounter
-	and so should have a resolution of roughly 100ns. 
+Note: On MSVC, high_resolution_clock is based on QueryPerformanceCounter
+and so should have a resolution of roughly 100ns. 
 
-	Author: Patrick Poitras (patrick.f.poitras@gmail.com)
-	License: Public domain. 
+Author: Patrick Poitras (patrick.f.poitras@gmail.com)
+License: Public domain. 
 */
 
 // The excessive verbosity of the chrono library is a sight to behold.
@@ -21,7 +21,7 @@ inline chrono_timepoint get_time() {
 }
 
 // Returns time in nanoseconds since the passed parameter.
-inline double get_time_since(const chrono_timepoint &previousTimestamp) {
+inline double get_time_since(const chrono_timepoint& previousTimestamp) {
 	return (get_time() - previousTimestamp).count();
 }
 
